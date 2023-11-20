@@ -24,12 +24,14 @@ export default function Game() {
           name=""
           id="paper"
         />
-        <label
-          className="flex items-center justify-center bg-white px-5 py-4 md:px-12 md:py-10 rounded-full border-[16px] md:border-[20px] border-blue-700 cursor-pointer"
-          htmlFor="paper"
-        >
-          <img src={paper} alt="icon paper" />
-        </label>
+        <div className="rounded-full border-[16px] md:border-[20px] border-blue-700 shadow-[0_9px_0px_0px_rgba(30,58,138,0.7)]">
+          <label
+            className="flex items-center justify-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)] md:shadow-[inset_0px_8px_0px_rgba(0,0,0,0.2)] px-5 py-4 md:px-12 md:py-10 rounded-full   cursor-pointer"
+            htmlFor="paper"
+          >
+            <img src={paper} alt="icon paper" />
+          </label>
+        </div>
 
         <input
           onChange={(e) => handleSelect(e)}
@@ -39,12 +41,14 @@ export default function Game() {
           name=""
           id="scissors"
         />
-        <label
-          className="flex items-center justify-center bg-white px-5 py-4 md:px-12 md:py-10 rounded-full border-[16px] md:border-[20px] border-yellow-400 cursor-pointer"
-          htmlFor="scissors"
-        >
-          <img src={scissors} alt="icon scissors" />
-        </label>
+        <div className="rounded-full border-[16px] md:border-[20px] border-yellow-400 shadow-[0_8px_0px_0px_rgba(202,138,4,0.9)] md:shadow-[0_10px_0px_0px_rgba(202,138,4,0.9)]">
+          <label
+            className="flex items-center justify-center bg-white px-5 py-4 md:px-12 md:py-10 rounded-full shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)] md:shadow-[inset_0px_8px_0px_rgba(0,0,0,0.2)] cursor-pointer"
+            htmlFor="scissors"
+          >
+            <img src={scissors} alt="icon scissors" />
+          </label>
+        </div>
       </div>
       <div className="flex items-center justify-center">
         <input
@@ -55,12 +59,14 @@ export default function Game() {
           name=""
           id="rock"
         />
-        <label
-          className="flex items-center justify-center bg-white px-5 py-4 md:px-12 md:py-10 rounded-full border-[16px] md:border-[20px] border-red-500 cursor-pointer"
-          htmlFor="rock"
-        >
-          <img src={rock} alt="icon rock" />
-        </label>
+        <div className="rounded-full border-[16px] md:border-[20px] border-red-500 shadow-[0_8px_0px_0px_rgba(153,27,27,0.7)] md:shadow-[0_10px_0px_0px_rgba(153,27,27,0.7)]">
+          <label
+            className="flex items-center justify-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)] md:shadow-[inset_0px_8px_0px_rgba(0,0,0,0.2)] px-5 py-4 md:px-12 md:py-10 rounded-full cursor-pointer"
+            htmlFor="rock"
+          >
+            <img src={rock} alt="icon rock" />
+          </label>
+        </div>
       </div>
     </div>
   );

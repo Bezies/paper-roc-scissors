@@ -1,7 +1,4 @@
 import React, { useEffect, useState } from "react";
-import rock from "../assets/images/icon-rock.svg";
-import paper from "../assets/images/icon-paper.svg";
-import scissors from "../assets/images/icon-scissors.svg";
 import { useDispatch, useSelector } from "react-redux";
 import { CountPoint } from "../features/prs";
 import { NewGame } from "../features/prs";
@@ -23,19 +20,21 @@ export default function MyItemPicked() {
       <div className="flex justify-between items-center">
         <div className="flex flex-col md:flex-col-reverse items-center">
           <div
-            className={`flex items-center justify-center bg-white px-4 py-3 md:px-14 md:py-12 rounded-full border-[14px] md:border-[18px] ${
+            className={`border-[14px] md:border-[18px] rounded-full ${
               prs.ListOfChoice.find((el) => el.name === prs.MyPicked)
                 .colorBorder
-            }`}
-            htmlFor="paper"
+            } ${prs.ListOfChoice.find((el) => el.name === prs.MyPicked).shadow}
+             `}
           >
-            <img
-              className="w-12 h-14 md:w-16 md:h-20"
-              src={
-                prs.ListOfChoice.find((el) => el.name === prs.MyPicked).image
-              }
-              alt="icon paper"
-            />
+            <div className="flex items-center justify-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)] md:shadow-[inset_0px_8px_0px_rgba(0,0,0,0.2)] px-4 py-3 md:px-14 md:py-12 rounded-full">
+              <img
+                className="w-12 h-14 md:w-16 md:h-20"
+                src={
+                  prs.ListOfChoice.find((el) => el.name === prs.MyPicked).image
+                }
+                alt="icon paper"
+              />
+            </div>
           </div>
 
           <p className="uppercase text-white text-sm font-semibold mt-5 md:mb-10 md:text-2xl">
@@ -45,19 +44,25 @@ export default function MyItemPicked() {
 
         <div className="flex flex-col md:flex-col-reverse items-center">
           <div
-            className={`flex items-center justify-center bg-white px-4 py-3 md:px-14 md:py-12 rounded-full border-[14px] md:border-[18px]  ${
+            className={`rounded-full border-[14px] md:border-[18px]  ${
               prs.ListOfChoice.find((el) => el.id === prs.HousePickedID)
                 .colorBorder
+            } ${
+              prs.ListOfChoice.find((el) => el.id === prs.HousePickedID).shadow
             }`}
-            htmlFor="paper"
           >
-            <img
-              className="w-12 h-14 md:w-16 md:h-20"
-              src={
-                prs.ListOfChoice.find((el) => el.id === prs.HousePickedID).image
-              }
-              alt="icon paper"
-            />
+            <div
+              className={`flex items-center justify-center bg-white shadow-[inset_0px_6px_0px_rgba(0,0,0,0.2)] md:shadow-[inset_0px_8px_0px_rgba(0,0,0,0.2)]  px-4 py-3 md:px-14 md:py-12 rounded-full `}
+            >
+              <img
+                className="w-12 h-14 md:w-16 md:h-20"
+                src={
+                  prs.ListOfChoice.find((el) => el.id === prs.HousePickedID)
+                    .image
+                }
+                alt="icon paper"
+              />
+            </div>
           </div>
           <p className="uppercase text-white text-sm font-semibold mt-5 md:mb-10 md:text-2xl">
             The house Picked
@@ -70,7 +75,7 @@ export default function MyItemPicked() {
             <p className="text-5xl text-white font-bold">YOU LOSE</p>
             <button
               onClick={() => PlayAgain()}
-              className="flex items-center justify-center bg-white px-10 py-3 mt-5 rounded-lg text-sm text-cello-800 font-medium"
+              className="flex items-center justify-center bg-white px-10 py-3 mt-5 rounded-lg text-sm text-cello-800 font-medium hover:text-red-600"
             >
               PLAY AGAIN
             </button>
@@ -81,7 +86,7 @@ export default function MyItemPicked() {
             <p className="text-5xl text-white font-bold">YOU WIN</p>
             <button
               onClick={() => PlayAgain()}
-              className="flex items-center justify-center bg-white px-10 py-3 mt-5 rounded-lg text-sm text-cello-800 font-medium"
+              className="flex items-center justify-center bg-white px-10 py-3 mt-5 rounded-lg text-sm text-cello-800 font-medium hover:text-red-600"
             >
               PLAY AGAIN
             </button>
