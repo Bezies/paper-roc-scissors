@@ -69,16 +69,6 @@ export const prs = createSlice({
         state.Result.win = true;
         state.Result.loose = false;
         state.Result.draw = false;
-        // PAPER VS PAPER
-      } else if (
-        state.MyPicked === "paper" &&
-        state.ListOfChoice.find((el) => el.id === state.HousePickedID).name ===
-          "paper"
-      ) {
-        state.CountPoint.push(0);
-        state.Result.win = false;
-        state.Result.loose = false;
-        state.Result.draw = true;
         // ROCK VS PAPER
       } else if (
         state.MyPicked === "rock" &&
@@ -99,17 +89,7 @@ export const prs = createSlice({
         state.Result.win = true;
         state.Result.loose = false;
         state.Result.draw = false;
-        // ROCK VS ROCK
-      } else if (
-        state.MyPicked === "rock" &&
-        state.ListOfChoice.find((el) => el.id === state.HousePickedID).name ===
-          "rock"
-      ) {
-        state.CountPoint.push(0);
-        state.Result.win = false;
-        state.Result.loose = false;
-        state.Result.draw = true;
-        // SCISSORS vs PAPER
+        // SCISSORS VS PAPER
       } else if (
         state.MyPicked === "scissors" &&
         state.ListOfChoice.find((el) => el.id === state.HousePickedID).name ===
@@ -129,11 +109,10 @@ export const prs = createSlice({
         state.Result.win = false;
         state.Result.loose = true;
         state.Result.draw = false;
-        // SCISSORS VS SCISSORS
+        // DRAW
       } else if (
-        state.MyPicked === "scissors" &&
-        state.ListOfChoice.find((el) => el.id === state.HousePickedID).name ===
-          "scissors"
+        state.MyPicked ===
+        state.ListOfChoice.find((el) => el.id === state.HousePickedID).name
       ) {
         state.CountPoint.push(0);
         state.Result.win = false;

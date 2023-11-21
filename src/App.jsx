@@ -9,7 +9,7 @@ export default function () {
   const prs = useSelector((state) => state.prs);
 
   return (
-    <div className="h-screen bg-gradient-to-br from-cello-900 to-haiti-950">
+    <div className="h-screen bg-gradient-to-br from-cello-900 to-haiti-950 font-barlow">
       <div className="pt-10">
         <Header />
       </div>
@@ -17,7 +17,7 @@ export default function () {
         {prs.rounds.roundOne && <Game />}
         {prs.rounds.roundTwo && <MyItemPicked />}
       </div>
-      <div className="flex items-center justify-center md:justify-end md:pr-12">
+      <div className="flex items-center justify-center md:fixed md:bottom-10 md:right-10">
         <FooterRules />
       </div>
     </div>

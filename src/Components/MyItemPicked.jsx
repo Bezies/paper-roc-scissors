@@ -71,7 +71,7 @@ export default function MyItemPicked() {
       </div>
       <div className="relative">
         {prs.Result.loose && (
-          <div className="flex flex-col items-center justify-center md:mt-0 md:absolute md:-top-40 md:left-1/2 md:-translate-x-1/2">
+          <div className="flex flex-col items-center justify-center mt-20 md:mt-0 md:absolute md:-top-40 md:left-1/2 md:-translate-x-1/2">
             <p className="text-5xl text-white font-bold">YOU LOSE</p>
             <button
               onClick={() => PlayAgain()}
